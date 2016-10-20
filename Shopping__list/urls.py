@@ -24,5 +24,5 @@ from .routers import router
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^rest-auth/', include('rest_framework.urls')),
-    url(r'^v1/', include(router.urls)),
+    url(r'^shopping/', include(router.urls)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
