@@ -9,3 +9,4 @@ class ProductSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = Product
+        fields = ('name', 'is_complete',)
