@@ -22,7 +22,10 @@ from .routers import router
 
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^rest-auth/', include('rest_framework.urls')),
+    url(r'^shopping/admin/', admin.site.urls),
+    url(r'^shopping/rest-auth/', include('rest_framework.urls')),
     url(r'^shopping/', include(router.urls)),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
