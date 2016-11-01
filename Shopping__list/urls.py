@@ -23,7 +23,9 @@ from .routers import router
 
 urlpatterns = [
     url(r'^shopping/admin/', admin.site.urls),
-    url(r'^shopping/rest-auth/', include('rest_framework.urls')),
+    # url(r'^shopping/rest-auth/', include('rest_framework.urls')),
+    url(r'^shopping/auth/', include('rest_auth.urls')),
+    url(r'^shopping/auth/registration/', include('rest_auth.registration.urls')),
     url(r'^shopping/', include(router.urls)),
 ]
 

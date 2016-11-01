@@ -39,8 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
+    'rest_auth.registration',
 
-    'Shopping__list.product'
+
+    'Shopping__list.product',
+    'django.contrib.sites',
+    'allauth.account',
 ]
 
 MIDDLEWARE = [
@@ -123,11 +129,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/product-images/'
+SITE_ID = 3
+# LOGIN_REDIRECT_URL = '/shopping/products'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication'
     ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 20
